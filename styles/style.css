@@ -1,0 +1,12 @@
+main{
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+}
+
+.home-page{
+    grid-column: 2 / 3;
+}
+
+footer{
+    text-align: center;
+}
