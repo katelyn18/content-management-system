@@ -2,7 +2,7 @@
     require "header.php";
 ?>
 <main>
-    <div class="signup-container">
+    <div class="format-container">
         <section>
             <h1>Signup</h1>
             <?php

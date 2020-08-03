@@ -1,4 +1,12 @@
 
+body{
+    padding: 1em;
+}
+
+img{
+    width: 4em;
+}
+
 nav{
     display: grid;
     grid-template-columns: 10% auto;
@@ -26,7 +34,7 @@ footer{
     text-align: center;
 }
 
-.signup-container{
+.format-container{
     grid-column: 2 / 3;
 }
 
