@@ -1,3 +1,18 @@
+
+nav{
+    display: grid;
+    grid-template-columns: 10% auto;
+}
+
+.logo{
+    grid-column: 1 / 2;
+}
+
+.loginout{
+    grid-column: 2 / 3;
+    text-align: right;
+}
+
 main{
     display: grid;
     grid-template-columns: 20% auto 20%;
@@ -9,4 +24,13 @@ main{
 
 footer{
     text-align: center;
+}
+
+.signup-container{
+    grid-column: 2 / 3;
+}
+
+.signup{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
 }

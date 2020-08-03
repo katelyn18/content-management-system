@@ -2,16 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name=viewport content="width=device-width, initiatl-scale=1">
+        <meta name=viewport content="width=device-width, initial-scale=1">
         <title>Content Management System</title>
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/style.css?<?php echo time(); ?>"> <!-- php added to not upload css from cache -->
     </head>
     <body>
         <nav>
-            <a href="#">
+            <a class="logo" href="#">
                 <img src="" alt="logo"> <!-- makes website look professional -->
             </a>
-            <div>
+            <div class="loginout">
                 <?php
                     if( isset( $_SESSION[ 'userUid' ] ) ){ /* CHANGE userUid !!!!!!!!!!!! */
                         echo '<form action="includes/logout.inc.php" method="post">
