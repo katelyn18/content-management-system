@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,7 +8,7 @@
         <meta name=viewport content="width=device-width, initial-scale=1">
         <title>Content Management System</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/style.css?<?php echo time(); ?>"> <!-- php added to not upload css from cache -->
+        <link rel="stylesheet" href="styles/style.css?<?php echo time(); ?>">  <!-- php added to not upload css from cache -->
         <link rel="icon" type="image/png" href="img/favicon.png">
     </head>
     <body>
@@ -15,7 +18,7 @@
             </a>
             <div class="loginout">
                 <?php
-                    if( isset( $_SESSION[ 'userUid' ] ) ){ /* CHANGE userUid !!!!!!!!!!!! */
+                    if( isset( $_SESSION[ 'userUid' ] ) ){ 
                         echo '<form action="includes/logout.inc.php" method="post">
                         <button type="submit" name="logout-submit">Logout</button>
                     </form>';
