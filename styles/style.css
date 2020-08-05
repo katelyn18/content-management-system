@@ -42,3 +42,17 @@ footer{
     display: grid;
     grid-template-rows: auto auto auto auto auto;
 }
+
+/* Dashboard */
+.dash-title{
+    grid-column: 2 / 3;
+}
+
+.sidebar{
+    grid-column: 1 / 2;
+}
+
+/* website modal */
+#website-name{
+    width: 75%;
+}

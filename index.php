@@ -1,16 +1,16 @@
 <?php
     require "header.php";
 ?>
-<main><!-- basically will hold the contents of the website -->
-    <?php
+<main>
+    <?php   
         if( isset( $_SESSION[ 'userUid' ] ) ){
-            echo "<p>You are logged in! </p>";
+            echo "<a href='dash.php'>Dashboard</a>";
 
         }else{
             echo "<p>You are logged out! </p>";
         }
-    ?>
-
+    ?> 
+    
     <h1 class="home-page">Welcome!</h1>
     <p class="home-page">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac rhoncus neque. In at dictum urna. Vestibulum tristique blandit nisl, a pretium massa ultricies a. Praesent ultrices congue elit sed aliquam. Duis dictum at tellus eu aliquam. Fusce et aliquet nisi. Donec egestas turpis sed suscipit eleifend. Etiam venenatis id diam eget sollicitudin. Suspendisse vestibulum nulla dui, quis egestas ante ornare nec. Aliquam sed placerat quam. Aenean porta mauris odio, ornare congue turpis sagittis vel. Etiam molestie viverra ligula ut lacinia. Nulla facilisi. Mauris urna odio, convallis sit amet odio at, auctor cursus turpis.</p>
 
