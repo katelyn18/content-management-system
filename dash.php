@@ -42,10 +42,11 @@
         <?php
             $user_name = $_SESSION[ 'userUid' ];
             echo "<p>user_name: " . $user_name . "</p>";
-            $sql = "SELECT websiteName FROM Website INNER JOIN Users ON Website.userId=Users.userId WHERE Users.userName=?";    /* ERROR HERE */
+            $sql = "SELECT websiteName FROM Website INNER JOIN Users ON Website.userId=Users.userId WHERE Users.username=?";    
             $stmt = mysqli_stmt_init( $conn );
             if( !mysqli_stmt_prepare( $stmt, $sql ) ){
-                header("Location: ../dash.php?error=sqlwebsiteerror" );
+                //header("Location: ../dash.php?error=sqlwebsiteerror" );
+                echo "<p>Error: " . mysqli_error( $conn ) . "</p>"; /* *********************** EDIT BACK AGAIN ************************** */
                 exit();
             }else{
                 mysqli_stmt_bind_param( $stmt, "s", $user_name );
@@ -53,13 +54,16 @@
                 mysqli_stmt_store_result( $stmt );
                 $resultCheck = mysqli_stmt_num_rows( $stmt );
                 if( $resultCheck > 0 ){
-                    if( $results = mysqli_query( $conn, $sql ) ){
+                    mysqli_stmt_bind_param( $stmt, "s", $user_name );
+                    mysqli_stmt_execute( $stmt );
+                    $results = mysqli_stmt_get_result( $stmt );
+                    if( $results ){ /* ERROR HERE mysqli_query( $conn, $sql )*/
                         while( $row = mysqli_fetch_row( $results ) ){ 
                             echo "<p>" . $row[0] . "</p>";
                         }
                         mysqli_free_result( $results );
                     } else{
-                        echo "Error: " . mysqli_error( $conn );
+                        echo "Error error: " . mysqli_error( $conn );
                     }
                 }else{
                     echo "<p>No websites created yet</p>";
